@@ -4,9 +4,6 @@ let prefix = '&'
 
 client.login(process.env.BOT_TOKEN)
 
-client.on("message", async message => {   
-client.user.setActivity('&help | @MJaik#2003',{ type: 'WATCHING' }) 
-if(message.author.bot) return;
-if(message.channel.type === "dm") return;
-  
+bot.on("ready", async () => {
+  bot.user.setGame("&help | @MJaik#2003");
 });
