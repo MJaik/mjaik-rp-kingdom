@@ -4,10 +4,10 @@ let prefix = '&'
 
 client.login(process.env.BOT_TOKEN)
 
-bot.on("ready", async () => {
-  bot.user.setGame("&help | @MJaik#2003");
+client.on("ready", async () => {
+  client.user.setActivity('&help | @MJaik#2003',{ type: 'PLAYING'});
 });
 
-bot.on("message", async => {
+client.on("message", async => {
   
 });
