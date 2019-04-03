@@ -19,4 +19,10 @@ client.on("message", async message => {
   if(cmd === '&hello') {
   return message.channel.send("Привет!");
   }
+  
+  if(cmd === '&botinfo'){
+  let botEmbed = new Discord.RichEmbed();
+    .setDescription("Информация о жителе")
+    .setColor("")
+  }
 });
