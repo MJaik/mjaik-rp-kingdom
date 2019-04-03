@@ -20,11 +20,33 @@ client.on("message", async message => {
   return message.channel.send("Привет!");
   }
   
-  if(cmd === '&maininfo') {
-  let mInfoEmbed = new Discord.RichEmbed();
-    .setColor("#ffcc00")
-    .addField(prefix + "hello", "Сказать привет")
-  
   return message.channel.send(mInfoEmbed);
+  }
+  
+  if(cmd === `&report`){
+
+    //!report @ned this is the reason
+
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send("Couldn't find user.");
+    let reason = args.join(" ").slice(22);
+
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Жалоба")
+    .setColor("#15f153")
+    .addField("Виновник", `${rUser} с ID: ${rUser.id}`)
+    .addField("Обвиняет", `${message.author} с ID: ${message.author.id}')
+    .addField("Место", message.channel)
+    .addField("Время", message.createdAt)
+    .addField("Причина", reason);
+
+    let reportschannel = message.guild.channels.find(`name`, "логи");
+    if(!reportschannel) return message.channel.send("Не могу найти место для отчёта.");
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(reportEmbed);
+
+    return;
   }
 });
