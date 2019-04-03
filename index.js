@@ -17,6 +17,6 @@ client.on("message", async message => {
   let args = messageArray.slice(1);
   
   if(cmd === '&hello') {
-  return message.channel.send("Hello!");
+  return message.channel.send("Привет!");
   }
 });
