@@ -20,12 +20,11 @@ client.on("message", async message => {
   return message.channel.send("Привет!");
   }
   
-  if(cmd === '&botinfo'){
-  let botEmbed = new Discord.RichEmbed();
-    .setDescription("Информация о жителе")
+  if(cmd === '&maininfo') {
+  let mInfoEmbed = new Discord.RichEmbed();
     .setColor("#ffcc00")
-    .addField("Имя жителя", "Главный житель")
-    
-    return message.channel.send(botEmbed);
+    .addField(prefix + "hello", "Сказать привет")
+  
+  return message.channel.send(mInfoEmbed);
   }
 });
