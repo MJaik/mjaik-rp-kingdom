@@ -7,3 +7,7 @@ client.login(process.env.BOT_TOKEN)
 bot.on("ready", async () => {
   bot.user.setGame("&help | @MJaik#2003");
 });
+
+bot.on("message", async => {
+  
+});
