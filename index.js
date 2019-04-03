@@ -23,6 +23,9 @@ client.on("message", async message => {
   if(cmd === '&botinfo'){
   let botEmbed = new Discord.RichEmbed();
     .setDescription("Информация о жителе")
-    .setColor("")
+    .setColor("#ffcc00")
+    .addField("Имя жителя", client.user.username)
+    
+    return message.channel.send(botEmbed);
   }
 });
