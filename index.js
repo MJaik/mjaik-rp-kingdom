@@ -24,7 +24,7 @@ client.on("message", async message => {
   let botEmbed = new Discord.RichEmbed();
     .setDescription("Информация о жителе")
     .setColor("#ffcc00")
-    .addField("Имя жителя", client.user.username)
+    .addField("Имя жителя", client.user.name)
     
     return message.channel.send(botEmbed);
   }
