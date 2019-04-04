@@ -23,11 +23,11 @@ client.on("message", async message => {
   return message.channel.send(mInfoEmbed);
   }
   
-  if(cmd === `&report`){
+  if(cmd === '&report'){
 
     //!report @ned this is the reason
 
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let rUser = message.guild.member(message.mentions.users.first());
     if(!rUser) return message.channel.send("Couldn't find user.");
     let reason = args.join(" ").slice(22);
 
@@ -43,8 +43,6 @@ client.on("message", async message => {
     let reportschannel = message.guild.channels.find(`name`, "логи");
     if(!reportschannel) return message.channel.send("Не могу найти место для отчёта.");
 
-
-    message.delete().catch(O_o=>{});
     reportschannel.send(reportEmbed);
 
     return;
